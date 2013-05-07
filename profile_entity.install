@@ -20,7 +20,7 @@ function profile_entity_enable() {
          $type = 'text';
          $widget = 'textfield';
          break;
-      case 'selection':
+      case 'selection' || 'checkbox':
          $type = 'list_text';
          if ($record->visibility == 1) {
 	       $widget = 'options_buttons';
@@ -43,6 +43,10 @@ function profile_entity_enable() {
       case 'date':
          $type = 'date';
          $widget = 'date';
+         break;
+      case 'url':
+         $type = 'link_field';
+         $widget = 'link_field';
          break;
       case 'textarea':
          $type = 'text_long';
